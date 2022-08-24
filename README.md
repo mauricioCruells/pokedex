@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Pokedex description
 
 Test project for a simple pokedex using https://pokeapi.co/
 
