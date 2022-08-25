@@ -1,0 +1,22 @@
+App.js:27 Promise {<pending>}
+App.js:27 Promise {<pending>}
+App.js:22 TypeError: rawResponse.json is not a function
+    at getPokemon (App.js:19:1)
+App.js:22 TypeError: rawResponse.json is not a function
+    at getPokemon (App.js:19:1)
+App.js:27 Promise {<pending>}
+App.js:27 Promise {<pending>}
+App.js:22 TypeError: rawResponse.json is not a function
+    at getPokemon (App.js:19:1)
+App.js:22 TypeError: rawResponse.json is not a function
+    at getPokemon (App.js:19:1)
+App.js:27 Promise {<pending>}
+App.js:27 Promise {<pending>}
+App.js:22 TypeError: rawResponse.json is not a function
+    at getPokemon (App.js:19:1)
+App.js:22 TypeError: rawResponse.json is not a function
+    at getPokemon (App.js:19:1)
+App.js:25 Promise {<pending>}
+App.js:25 Promise {<pending>}
+App.js:18 {data: {…}, status: 200, statusText: '', headers: {…}, config: {…}, …}config: {transitional: {…}, transformRequest: Array(1), transformResponse: Array(1), timeout: 1000, adapter: ƒ, …}data: abilities: (2) [{…}, {…}]base_experience: 64forms: [{…}]game_indices: (20) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]height: 7held_items: []id: 1is_default: truelocation_area_encounters: "https://pokeapi.co/api/v2/pokemon/1/encounters"moves: (83) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]name: "bulbasaur"order: 1past_types: []species: {name: 'bulbasaur', url: 'https://pokeapi.co/api/v2/pokemon-species/1/'}sprites: {back_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png', back_female: null, back_shiny: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/1.png', back_shiny_female: null, front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png', …}stats: (6) [{…}, {…}, {…}, {…}, {…}, {…}]types: (2) [{…}, {…}]weight: 69[[Prototype]]: Objectheaders: {cache-control: 'public, max-age=86400, s-maxage=86400', content-type: 'application/json; charset=utf-8'}request: XMLHttpRequest {onreadystatechange: null, readyState: 4, timeout: 1000, withCredentials: false, upload: XMLHttpRequestUpload, …}status: 200statusText: ""[[Prototype]]: Object
+App.js:18 {data: {…}, status: 200, statusText: '', headers: {…}, config: {…}, …}
