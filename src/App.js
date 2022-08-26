@@ -1,54 +1,70 @@
 import React from "react";
 import "./App.css";
-import NavBar from "./components/NavBar/NavBar.js";
-import SearchBar from "./components/Control/SearchBar/SearchBar.js";
-import Filter from "./components/Control/Filter/Filter.js";
-import PokeCard from "./components/PokeCard/PokeCard.js";
+
+//Components and Hooks
+
+import { PokeCard, NavBar, SearchBar, Filter } from "./components/";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [currentPokemon, setCurrentPokemon] = useState({});
+  const [pokeData, setPokeData] = useState([]);
+  const [pokeURL, setPokeURL] = useState("");
+  const [filter, setFilter] = useState("");
 
-  const axios = require("axios");
+  // -----------initial pokemon rendering------
+  const getPokeData = async (name) => {
+    const res = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${name}?limit=100`
+    );
+    const data = await res.json();
 
-  async function getPokemon() {
-    try {
-      const response = await axios.get(
-        "https://pokeapi.co/api/v2/pokemon/bulbasaur"
-      );
-      console.log(response);
-    } catch (error) {
-      console.log(error);
+    function createPokemonObject(results) {
+      setPokeData([]);
+      results.forEach(async (pokemon) => {
+        const res = await fetch(
+          `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
+        );
+        const data = await res.json();
+        if (filter === "" || filter === data.types[0].type.name) {
+          setPokeData((currentList) => [...currentList, data]);
+        }
+      });
     }
-  }
+
+    const requestedPokemon = name === "" ? data.results : [data];
+
+    createPokemonObject(requestedPokemon);
+  };
 
   useEffect(() => {
-    getPokemon().then((response) => {
-      setCurrentPokemon(response.data);
-    });
+    getPokeData();
   }, []);
+  //--------------------------------------------
 
-  const {
-    name,
-    height,
-    id,
-    sprites: { front_default: image },
-    types: [
-      {
-        type: { name: typeName },
-      },
-    ],
-    weight,
-  } = currentPokemon;
-
-  const currentDexInfo = { name, height, id, image, typeName, weight };
+  useEffect(() => {
+    getPokeData(pokeURL);
+  }, [pokeURL, filter]);
 
   return (
     <div className="App">
       <NavBar />
-      <SearchBar />
-      <Filter />
-      <PokeCard info={currentDexInfo} />
+      <SearchBar onRequestChange={setPokeURL} removeFilter={setFilter} />
+      <Filter onFilterClick={setFilter} />
+      <div className="card-container">
+        {pokeData.map((entry) => {
+          return (
+            <PokeCard
+              key={entry.id}
+              image={entry.sprites.front_default}
+              name={entry.name}
+              id={entry.id}
+              type={entry.types[0].type.name}
+              height={entry.height}
+              weight={entry.weight}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

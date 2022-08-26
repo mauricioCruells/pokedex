@@ -1,0 +1,9 @@
+.pokeCard{
+    height: 320px;
+    width: 160px;
+    min-width: 160px !important;
+    margin:10px;
+    color:white;
+    background-color:rgb(66, 74, 95);
+    box-shadow: 8px 8px rgb(40, 45, 58);
+}

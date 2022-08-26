@@ -1,4 +1,12 @@
 .App {
   text-align: center;
+  background-color: #2e353b;
+  height:615vh;
 }
 
+.card-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items: center;
+}
